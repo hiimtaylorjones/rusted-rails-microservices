@@ -1,0 +1,6 @@
+[package]
+name = "rust-archive"
+version = "0.1.0"
+authors = ["Taylor Jones <taylorjonessoftware@gmail.com>"]
+
+[dependencies]
