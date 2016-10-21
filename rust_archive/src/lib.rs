@@ -4,7 +4,6 @@
 pub mod schema;
 pub mod models;
 
-
 #[macro_use] extern crate diesel;
 extern crate dotenv;
 
@@ -12,7 +11,7 @@ use diesel::prelude::*;
 use diesel::pg::PgConnection;
 use dotenv::dotenv;
 use std::env;
-use self::models::{Post, NewPost, User, NewUser};
+use self::models::{Post, NewPost, Author, NewAuthor};
 
 pub fn establish_connection() -> PgConnection {
     dotenv().ok();
@@ -29,7 +28,7 @@ pub fn create_post<'a>(conn: &PgConnection, title: &'a str, body: &'a str, autho
     let new_post = NewPost {
         title: title,
         body: body,
-        author_id: user_id,
+        author_id: author_id,
     };
 
     diesel::insert(&new_post).into(posts::table)
