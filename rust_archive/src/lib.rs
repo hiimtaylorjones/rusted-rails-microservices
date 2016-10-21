@@ -1,16 +1,18 @@
-#![feature(custom_derive, custom_attribute, plugin)]
-#![plugin(diesel_codegen)]
+#![feature(proc_macro)]
+
+#[macro_use] extern crate diesel;
+#[macro_use] extern crate diesel_codegen;
+extern crate dotenv;
 
 pub mod schema;
 pub mod models;
-
-#[macro_use] extern crate diesel;
-extern crate dotenv;
 
 use diesel::prelude::*;
 use diesel::pg::PgConnection;
 use dotenv::dotenv;
 use std::env;
+
+
 use self::models::{Post, NewPost, Author, NewAuthor};
 
 pub fn establish_connection() -> PgConnection {
