@@ -1,5 +1,0 @@
-CREATE TABLE authors (
-  id SERIAL PRIMARY KEY,
-  name VARCHAR NOT NULL,
-  email VARCHAR NOT NULL
-)

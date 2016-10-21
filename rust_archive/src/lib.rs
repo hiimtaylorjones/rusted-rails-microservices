@@ -12,8 +12,7 @@ use diesel::pg::PgConnection;
 use dotenv::dotenv;
 use std::env;
 
-
-use self::models::{Post, NewPost, Author, NewAuthor};
+use self::models::{Post, NewPost};
 
 pub fn establish_connection() -> PgConnection {
     dotenv().ok();
@@ -24,13 +23,12 @@ pub fn establish_connection() -> PgConnection {
         .expect(&format!("Error connecting to {}", database_url))
 }
 
-pub fn create_post<'a>(conn: &PgConnection, title: &'a str, body: &'a str, author_id: i32) -> Post {
+pub fn create_post(conn: &PgConnection, title: &str, body: &str) -> Post {
     use schema::posts;
 
     let new_post = NewPost {
         title: title,
         body: body,
-        author_id: author_id,
     };
 
     diesel::insert(&new_post).into(posts::table)

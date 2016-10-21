@@ -1,1 +1,1 @@
-{"rustc":17581496449099436292,"target":13297126778525782855,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["1.2.2"]},"features":"None","deps":[["idna v0.1.0",7290367834420893109],["matches v0.1.3",12185518034666893653]],"rustflags":[]}
+{"rustc":10525567033308492078,"target":13297126778525782855,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["1.2.2"]},"features":"None","deps":[["idna v0.1.0",1823816653139524176],["matches v0.1.3",13274718924337199269]],"rustflags":[]}
