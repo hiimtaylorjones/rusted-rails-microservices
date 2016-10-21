@@ -1,0 +1,1 @@
+{"rustc":17581496449099436292,"target":16796607549721091411,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.8.0"]},"features":"Some([\"default\", \"postgres\", \"pq-sys\"])","deps":[["byteorder v0.3.13",17926276644063289840],["libc v0.2.17",17370371075690233148],["pq-sys v0.2.3",10676085142432381091]],"rustflags":[]}

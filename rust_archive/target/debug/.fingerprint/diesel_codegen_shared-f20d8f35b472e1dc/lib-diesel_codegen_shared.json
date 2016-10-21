@@ -1,0 +1,1 @@
+{"rustc":17581496449099436292,"target":14056883840092511673,"profile":11154289914177168617,"local":{"variant":"Precalculated","fields":["0.8.0"]},"features":"Some([\"diesel\", \"dotenv\", \"postgres\"])","deps":[["diesel v0.8.0",14428844349903452722],["dotenv v0.8.0",7827058930298954023]],"rustflags":[]}

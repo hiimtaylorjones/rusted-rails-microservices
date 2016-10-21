@@ -1,0 +1,11 @@
+[package]
+name = "rustweb"
+version = "0.1.0"
+authors = ["Taylor Jones <taylorjonessoftware@gmail.com>"]
+
+[dependencies]
+diesel = "0.8.0"
+diesel_codegen = { version = "0.8.0", features = ["postgres"] }
+hyper = "0.9.7"
+dotenv = "0.8.0"
+rustc-serialize = "0.3.19"
