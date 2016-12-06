@@ -4,12 +4,11 @@ extern crate hyper;
 extern crate rustc_serialize;
 
 use self::rustweb::*;
-//use self::rustweb::models::*;
-//use self::diesel::prelude::*;
 
 use hyper::{Client};
 use std::io::Read;
 use rustc_serialize::json;
+use std::env::args;
 
 // Automatically generates traits to the struct
 #[derive(RustcDecodable, RustcEncodable)]
@@ -20,12 +19,30 @@ pub struct PostSerializer {
 }
 
 fn main() {
-    for x in 1..5 {
+    let start_s = args().nth(1).expect("Please provide a min id");
+    let start : i32 = match start_s.parse() {
+        Ok(n) => {
+           n
+       },
+       Err(_) => {
+           println!("error: first argument not an integer");
+           return;
+       },
+   };
+    let stop_s = args().nth(2).expect("Please provide a max id");
+    let stop : i32 = match stop_s.parse() {
+        Ok(n) => {
+           n
+       },
+       Err(_) => {
+           println!("error: second argument not an integer");
+           return;
+       },
+   };
+    for x in start..stop {
         let url = format!("http://localhost:3000/api/v1/posts/{}", x);
         let response = get_content(&url).unwrap();
-        // println!("{:?}", response);
         let decoded: PostSerializer = json::decode(&response).unwrap();
-        // println!("{:?}", decoded.title);
         create_post_from_object(&decoded);
     }
 }
